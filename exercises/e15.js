@@ -5,7 +5,13 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithNoMoons(data) {
-  // Your code goes here...
+  var noMoon = data.planets.filter(function moonless(planet) {
+    if (!('moons' in planet)){
+      return planet.name
+    }
+  })
+  .map((planetWOMoon) => planetWOMoon.name)
+  return noMoon
 }
 
 

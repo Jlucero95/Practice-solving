@@ -5,7 +5,15 @@ import { data } from "../data/data";
 // Return example: 'Planet Name'
 
 export function findPlanetNameByMoon(data, moonName) {
-  // Your code goes here...
+  var findMoons = data.planets.filter((nameOfMoon) => nameOfMoon.moons)
+
+  var findPlanetOfMoon = findMoons.filter(function nameOfPlanet(planetName) {
+    if (planetName.moons.includes(moonName)){
+      return planetName.name
+    }
+  })
+
+  return findPlanetOfMoon[0].name
 }
 
 

@@ -5,9 +5,33 @@ import { data } from "../data/data";
 // Return example: 1902
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
-  // feel free to import your `maxBy` or `minBy` methods from previous lessons
+
+var findYears = data.asteroids.filter(function yearOf(found) {
+  return found.discoveryYear;
+})
+.map(function yearOnly(year) {
+  return year.discoveryYear
+});
+
+function getMostFrequent(arr) {
+  const findIt = arr.reduce( (acc, val) => {
+    acc[val] = (acc[val] || 0 ) + 1
+    return acc
+  },{})
+  return Object.keys(findIt).reduce((a, b) => findIt[a] > findIt[b] ? a : b)
 }
+
+
+
+var found = Number(getMostFrequent(findYears))
+
+return found
+};
+
+
+
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-16"
