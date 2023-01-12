@@ -6,12 +6,9 @@ import { data } from "../data/data";
 
 export function getGreatestDiscoveryYear(data) {
 
-var findYears = data.asteroids.filter(function yearOf(found) {
+var findYears = data.asteroids.map(function yearOf(found) {
   return found.discoveryYear;
 })
-.map(function yearOnly(year) {
-  return year.discoveryYear
-});
 
 function getMostFrequent(arr) {
   const findIt = arr.reduce( (acc, val) => {
@@ -20,8 +17,6 @@ function getMostFrequent(arr) {
   },{})
   return Object.keys(findIt).reduce((a, b) => findIt[a] > findIt[b] ? a : b)
 }
-
-
 
 var found = Number(getMostFrequent(findYears))
 

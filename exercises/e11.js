@@ -2,13 +2,13 @@ import { data } from "../data/data";
 
 // SPACE DATA EXERCISE 11
 // Return an array of Planets' names with less than 10 moons
-// Return example: ['name1', 'name2', ... , 'nameN']
+// Return example: ['name1', 'name02', ... , 'nameN']
 
 export function lowMoonsPlanets(data) {
-  var lessThanTen = data.planets.filter((moonCount) => moonCount.moonsCount < 10)
-  .map((nameOf) => nameOf.name)
-  
-  return lessThanTen;
+  return data.planets
+    .filter((planet) => planet.moonsCount < 10)
+    .map((planet) => planet.name)
+
 }
 
 

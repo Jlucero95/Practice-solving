@@ -5,9 +5,9 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsNamesWithMoons(data) {
-  var findWithMoons = data.planets.filter((moon) => moon.moons)
-  .map ((nameIs) => nameIs.name)
-  return findWithMoons;
+  return data.planets
+  .filter((moon) => moon.moons)
+  .map ((moon) => moon.name)
 }
 
 
